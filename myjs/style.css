@@ -83,6 +83,6 @@ a:hover {
     padding: 1em 3em;
 }
 
-#back-to-top:visible {
+#back-to-top.visible {
     opacity: 1;
 }

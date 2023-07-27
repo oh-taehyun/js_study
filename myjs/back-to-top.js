@@ -19,6 +19,30 @@ if (docHeight != 0) {
 window.addEventListener('scroll', function () {
     scrollPos = docElem.scrollTop;
     console.log(scrollPos);
-})
 
-            // 클릭 이벤트 추가
+    //btt.className = (scrollpos > offset)? 'visible' : '';
+    btt.className = (scrollPos > offset) ? 'visible' : '';
+
+});
+//btt.className = 'test';
+// 클릭 이벤트 추가
+btt.addEventListener('click', function (ev) {
+    ev.preventDefault(); //링크의 본연의 기능을 막는다.
+    docElem.scrollTop = 0;
+});
+function scrollToTop() {
+    //일정시간 마다 할일
+    //setInterval(할일, 시간);
+    //0.0015s=15
+    //할일 = function(){실제로 할일}
+    //실제로 할일 윈도우 스크롤이 0이 아닐 때 window.scrollBy(0,-55);
+    //스크롤이 0이면 setInterval 멈춰라/ clearInterval(이름);
+
+    var scrollInterval = setInterval(function () {
+        if (scrollPos != 0) {
+            window.scrollBy(0, -55);
+        } else {
+            clearInterval(scrollInterval);
+        }
+    }, 15);
+}
