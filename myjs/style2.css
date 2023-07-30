@@ -1,10 +1,12 @@
+/* General styles */
 * {
+    box-sizing: border-box;
     -webkit-font-smoothing: antialised;
 }
 
 body {
     margin-top: 5em;
-    font: 20px/1.5 "Hevetica", Arial, sans-serif;
+    font: 20px/1.5 "Helvetica", Arial, sans-serif;
 }
 
 .container {
@@ -38,12 +40,20 @@ blockquote {
     color: #636363;
     font-weight: 300;
     font-style: italic;
+    margin-bottom: 1.5em;
 }
 
 cite {
     font-size: .75em;
     font-weight: 700;
     font-style: normal;
+}
+
+/* Utility */
+.simple-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Nav */
@@ -59,7 +69,8 @@ cite {
     width: 5em;
     border-radius: 50%;
     background-position: center center;
-    -webkit-transition: all .3s eas-in;
+    background-repeat: no-repeat;
+    -webkit-transition: all .3s ease-in;
     transition: all .3s ease-in;
 }
 
@@ -80,8 +91,9 @@ cite {
 #next {
     margin-left: 380px;
     background-image: url('arrow-right-out.svg');
+
 }
 
-#next.hover {
+#next:hover {
     background-image: url('arrow-right-over.svg');
 }
