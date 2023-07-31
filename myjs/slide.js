@@ -62,7 +62,7 @@ function updateNav() {
 
 // 버튼을 클릭하면 슬라이드 이동시키기
 
-navPrev = addEventListener('click', function (e) {
+navPrev.addEventListener('click', function (e) {
     e.preventDefault();
     //goToSlide(currentIndex - 1);
     //처음이 아니라면 goToSlide(currentIndex - 1);
@@ -75,11 +75,11 @@ navPrev = addEventListener('click', function (e) {
 
 });
 
-navNext = addEventListener('click', function (e) {
+navNext.addEventListener('click', function (e) {
     e.preventDefault();
     //goToSlide(currentIndex + 1);
     if (currentIndex < slideCount - 1) {
-        goToSlide(currentIndex - 1);
+        goToSlide(currentIndex + 1);
     } else {
         goToSlide(0);
     }
