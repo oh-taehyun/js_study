@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome">
+    <title>ABC corporation</title>
+
+    <style>
+        .notice {
+            position: fixed;
+            padding: 20px;
+            border: 1px solid #ccc;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notice">Notice</div>
+    <button onclick="deleteCookie();">쿠키 지우기</button>
+    <script>
+        console.log(document.cookie);
+        var currentCookie = document.cookie;
+        var cookieCheck = currentCookie.indexOf('ABC');
+        console.log(cookieCheck);
+        if (cookieCheck > -1) {
+            document.querySelector('.notice').style.display = 'none';
+        } else {
+            document.querySelector('.notice').style.display = 'block';
+        }
+
+        var date = new Date();
+        //new date() 현재 날짜 반환
+        //변수. 날짜 지정 변수.setDate(새로운 날짜);
+        // date.getDate()+7;
+        date.setDate(date.getDate() + 7);
+
+        var setCookie = '';
+        setCookie += 'CookieName = ABC;';
+        setCookie += 'expires =' + date.toUTCString();
+        console.log(setCookie);
+        document.cookie = setCookie;
+        function deleteCookie() {
+            var date = new Date();
+            date.setDate(date.getDate() - 1);
+
+            var setCookie = '';
+            setCookie += 'CookieName = ABC;';
+            setCookie += 'expires =' + date.toUTCString();
+            // console.log(setCookie);
+            document.cookie = setCookie;
+        }
+    </script>
+</body>
+
+</html>
