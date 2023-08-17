@@ -6,13 +6,38 @@
     <meta http-equiv="x-UA-Compatible" content="chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECMA SCRIPT 6</title>
+    <style>
+        .toggleBtn {
+            display: block;
+            width: 80px;
+            height: 50px;
+            margin: 50px auto 0;
+        }
+
+        .toggleTarget {
+            width: 800px;
+            margin: 20px auto 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: none;
+        }
+
+        .toggleTarget.on {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Arrow Function</h1>
-    <pre>
-
-    </pre>
+    <div class="wrap">
+        <button class="toggleBtn">토글</button>
+        <p class="toggleTarget">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, placeat. Reiciendis
+            quia amet, quam nemo quos quod
+            distinctio explicabo saepe cupiditate, quasi perspiciatis magnam.
+        </p>
+    </div>
     <script>
         function add(x, y) {
             return x + y;
@@ -42,13 +67,29 @@
         var result2 = result1(4);
         document.write(result2);
 
-        togglebtn.addEventListner('click', function () {
-            this.style.color = 'red';
-        });
+        // 토글버튼 만들기
+        const _toggleBtn = document.querySelector('.toggleBtn');
+        const _toggleTarget = document.querySelector('.toggleTarget');
 
-        togglebtn.addEventListner('click', () => {
-            this.style.color = 'red';
-        });
+
+        const toggleEvent = () => {
+            if (_toggleTarget.className == 'toggleTarget') {
+                _toggleTarget.className = 'toggleTarget on'
+                _toggleBtn.style.color = 'red';
+            } else {
+                _toggleTarget.className = 'toggleTarget'
+                _toggleBtn.style.color = 'black';
+            }
+        }
+
+        _toggleBtn.addEventListener('click', toggleEvent)
+        // toggleBtn.addEventListner('click', function () {
+        //     this.style.color = 'red';
+        // });
+
+        // _toggleBtn.addEventListner('click', () => {
+        //     this.style.color = 'red';
+        // });
     </script>
 </body>
 
