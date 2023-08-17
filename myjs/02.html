@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="chrome">
+    <meta name="viewport" content="width=device-width" ,initial-scale=1.0">
+    <title>ECMA SCRIPT 6</title>
+</head>
+
+<body>
+    <h1>let</h1>
+
+    <script>
+        // var lang = 'html';
+
+        // function learnweb(code) {
+        //      if (code) {
+        //         var lang = '기초언어';
+        //         return lang;
+        //     }
+        //     return lang;
+        // }
+        let lang = 'html';
+
+        function learnweb(code) {
+            if (code) {
+                let lang = '기초언어';
+                return lang;
+            }
+            return lang;
+        }
+        document.write(learnweb(true));
+    </script>
+    <h2>const</h2>
+    <pre>
+        const 상수 - 변할수 없는 값 지정
+        var 변수명 = 값
+        let 변수명 = 값
+        const 변수명 = 값
+    </pre>
+    <script>
+        var num = 1;
+        num = num + 100;
+        document.write(num);
+
+        let num1 = 1;
+        num1 = num1 + 100;
+        document.write(num1);
+
+        document.write('<hr>');
+        const num2 = 1;
+        // num2 = num2 +100;
+        document.write(num2);
+
+        document.write('<hr>');
+        const basic = 'html';
+        //basic = 'css';
+        document.write(basic);
+
+        document.write('<hr>');
+        const arr = ['html', 'css'];
+        //    arr = ['html', 'css', 'javascript'];
+        const obj = {};
+        //obj = {name: 'name'};
+    </script>
+</body>
+
+</html>
